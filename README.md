@@ -13,8 +13,9 @@ graph TD;
        _--refSeq:_ select sequence to subset whole alignment (e.g. chromosome)
        _--targetGenomes:_ list of genomes to subset alignment`")]--Large HAL file split into chromosome maf files-->B["`**Chromosome maf files**
        _mafExtractor_`"];
-    B--Use annotation file (BED) to generate gene maf files-->C["`**Gene maf files**`"];
-    C-->D["`**Gene aligned fasta files**`"];
-    E-->D;
+    B--Use annotation file (BED) to generate gene maf files-->C("`**Gene maf files**
+       _merge_blocks.py_`");
+    C--Uses get_spliced() from BioAlign to splice maf blocks-->D["`**Gene aligned fasta files**`"];
+    E(test)-->D;
 ```
 
