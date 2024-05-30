@@ -16,6 +16,8 @@ graph TD;
     B--Use annotation file (BED) to generate gene maf files-->C("`**Gene maf files**
        _merge_blocks.py_`");
     C--Uses get_spliced() from BioAlign to splice maf blocks-->D["`**Gene aligned fasta files**`"];
-    E(test)-->D;
+    E("`Generate start/stop coordinates for splcing maf blocks and remove empty maf files
+        _Pull_coords.sh_
+        _Remove_blankLines.sh_`")-->D;
 ```
 
