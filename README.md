@@ -6,13 +6,15 @@ Pre-processing steps from Cactus mammalian  [whole genome alignment](https://zoo
 ```mermaid
 graph TD;
     A[("`**Multiple whole genome alignment: HAL**
-       cactus-hal2maf
+       _cactus-hal2maf_
        _--noAnc:_ remove ancestral nodes
        _--dupeMode single:_ remove multiple sequences from same species in each block
        _--refGenome:_ species to use as ref genome
        _--refSeq:_ select sequence to subset whole alignment (e.g. chromosome)
-       _--targetGenomes:_ list of genomes to subset alignment`")]--Large HAL file split into chromosome maf files-->B[Chromosome maf files];
-    B--Use annotation file (BED) to generate gene maf files-->C[Gene maf files];
-    C-->D;
+       _--targetGenomes:_ list of genomes to subset alignment`")]--Large HAL file split into chromosome maf files-->B["`**Chromosome maf files**
+       _mafExtractor_`"];
+    B--Use annotation file (BED) to generate gene maf files-->C["`**Gene maf files**`"];
+    C-->D["`**Gene aligned fasta files**`"];
+    E-->D;
 ```
 
