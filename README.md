@@ -5,7 +5,7 @@ Pre-processing steps from Cactus mammalian  [whole genome alignment](https://zoo
 
 ```mermaid
 graph TD;
-    A-->B;
+    A[Multiple whole genome alignment: HAL]-->B[Chromosome maf files];
     A-->C;
     B-->D;
     C-->D;
