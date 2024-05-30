@@ -1,5 +1,5 @@
 # RERconverge_pipeline
-Pre-processing steps from Cactus mammalian  [whole genome alignment](https://zoonomiaproject.org/the-data/) (Genereux, et al. 2020) (HAL file) to gene trees for RERconverge analyses (Kowalczyk et al. 2019). 
+Pre-processing steps (and relative evolutionary rate and enrichment analysis) from Cactus mammalian  [whole genome alignment](https://zoonomiaproject.org/the-data/) (Genereux, et al. 2020) (HAL file) to gene trees for RERconverge analyses (Kowalczyk et al. 2019). 
 
 ## Overview
 
@@ -24,5 +24,8 @@ graph TD;
     F--Modify fasta header to species name only-->G("`**Header converted gene aligned fasta files**
                                                       _Build_gene_trees.R_`");
     G--Uses R Phangorn::estimatePhangornTreeAll() to generate ML gene trees-->H("`**Gene tree file for RERconverge**`");
+    H--RERconverge input1-->J("`**RERconverge**`");
+    I("`Csv file of species phenotypes
+        or environmental designations`")--RERconverge input2-->J;
 ```
 
