@@ -23,7 +23,7 @@ graph TD;
                                                                 _Convert_fasta_header.sh_`");
     F--Modify fasta header to species name only-->G("`**Header converted gene aligned fasta files**
                                                       _Build_gene_trees.R_`");
-    G--Uses R Phangorn::estimatePhangornTreeAll() to generate ML gene trees-->H("`**Gene tree file for RERconverge**`");
+    G--Uses R Phangorn::estimatePhangornTreeAll() to generate ML gene trees-->H("`**Gene trees file for RERconverge**`");
     H--RERconverge input1-->J("`**RERconverge**`");
     I("`Csv file of species phenotypes
         or environmental designations`")--RERconverge input2-->J;
