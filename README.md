@@ -20,8 +20,9 @@ graph TD;
     E("`_Pull_coords.sh_
         _Remove_blankLines.sh_`")--Generate start/stop coordinates for splcing maf blocks and remove empty maf files-->C;
     D--Select longest species sequence, remove all others-->F("`**Deduplicated species gene aligned fasta files**
-                                                                _Convert_fasta_header.sh_`");
-    F--Modify fasta header to species name only-->G("`**Header converted gene aligned fasta files**
+                                                                _Convert_fasta_header.sh_
+                                                                _remove_afa_tooFew_seqs.sh_`");
+    F--Modify fasta header to species name only; remove afa files with too few branch tips-->G("`**Header converted gene aligned fasta files**
                                                       _Build_gene_trees.R_`");
     G--Uses R Phangorn::estimatePhangornTreeAll() to generate ML gene trees-->H("`**Gene trees file for RERconverge**`");
     H--RERconverge input1-->J("`**RERconverge**`");
